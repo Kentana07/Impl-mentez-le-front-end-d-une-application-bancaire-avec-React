@@ -1,4 +1,5 @@
 import "./style.css";
+
 //definition des elements banner par leur url desc ...
 function Banneritem({ imageUrl, description, title, text }) {
   return (
