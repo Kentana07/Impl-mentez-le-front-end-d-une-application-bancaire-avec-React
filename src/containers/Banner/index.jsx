@@ -1,14 +1,11 @@
 import Banneritem from "../../components/Banneritem";
-import chat from "../../assets/icon-chat.webp";
-import money from "../../assets/icon-money.webp";
-import security from "../../assets/icon-security.webp";
 import "./style.css";
 
 function Banner() {
   return (
     <section className="feature">
       <Banneritem
-        imageUrl={chat}
+        imageUrl={"../../assets/img/icon-chat.webp"}
         description={"logo-chat"}
         title={"You are our #1 priority"}
         text={
@@ -16,7 +13,7 @@ function Banner() {
         }
       />
       <Banneritem
-        imageUrl={money}
+        imageUrl={"../../assets/img/icon-money.webp"}
         description={"logo-money"}
         title={"More savings means higher rates"}
         text={
@@ -24,7 +21,7 @@ function Banner() {
         }
       />
       <Banneritem
-        imageUrl={security}
+        imageUrl={"../../assets/img/icon-security.webp"}
         description={"logo-security"}
         title={"Security you can trust"}
         text={

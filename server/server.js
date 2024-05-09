@@ -22,9 +22,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from the React app in the public directory
-app.use(express.static(path.join(__dirname, '..', 'public')));
-
 // Handle custom routes for the API
 app.use('/api/v1/user', require('./routes/userRoutes'));
 
@@ -33,13 +30,21 @@ if (process.env.NODE_ENV !== 'production') {
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 }
 
+
+app.get('/', (req, res, next) => {
+  res.send('Hello from my Express server v2!')
+})
+
+// Serve static files from the React app in the public directory
+// app.use(express.static(path.join(__dirname, '..', 'src')));
+
+
 // Redirect all non-API requests to the React app
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
-});
+// app.get('/*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '..', 'src', 'index.html'));
+// });
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });
-app.listen(3000);

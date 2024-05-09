@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from "../../assets/argentBankLogo.webp";
 import "./style.css"
 import Login from '../../components/Log-in_out';
